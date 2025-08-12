@@ -11,9 +11,9 @@ PhoneBook::PhoneBook()
 
 static std::string formatField(std::string str)
 {
-	if (str.length() > 10)
-		return str.substr(0, 9) + ".";
-	return std::string(10 - str.length(), ' ') + str;
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return std::string(10 - str.length(), ' ') + str;
 }
 
 void PhoneBook::addContact()
@@ -81,10 +81,17 @@ void PhoneBook::searchContacts() const
         std::cout << "No contacts available." << std::endl;
         return;
     }
-    std::cout << std::setw(10) << "Index" << "|"
-              << std::setw(10) << "First Name" << "|"
-              << std::setw(10) << "Last Name" << "|"
-              << std::setw(10) << "Nickname" << std::endl;
+
+    std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
+    std::cout << "----------|----------|----------|----------" << std::endl;
+
+    for (int i = 0; i < contactCount; ++i)
+    {
+        std::cout << "         " << i + 1 << "|"
+                  << formatField(contacts[i].getFirstName()) << "|"
+                  << formatField(contacts[i].getLastName()) << "|"
+                  << formatField(contacts[i].getNickname()) << std::endl;
+    }
 
     for (int i = 0; i < contactCount; ++i)
     {
@@ -93,6 +100,7 @@ void PhoneBook::searchContacts() const
                   << formatField(contacts[i].getLastName()) << "|"
                   << formatField(contacts[i].getNickname()) << std::endl;
     }
+    
     std::cout << "Enter the index of the contact to view details: ";
     std::string input;
     std::getline(std::cin, input);

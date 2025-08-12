@@ -1,6 +1,12 @@
 #include <iostream>
 
-int main(int argc, char const **argv)
+char ft_toupper(char c) {
+    if (c >= 'a' && c <= 'z')
+        return c - 32;
+    return c;
+}
+
+int main(int argc, char **argv)
 {
     if(argc == 1) {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -8,7 +14,7 @@ int main(int argc, char const **argv)
     }
     for(int i = 1; i < argc; ++i) {
         for(int j = 0; argv[i][j]; ++j) {
-            std::cout << static_cast<char>(std::toupper(argv[i][j]));
+            std::cout << ft_toupper(argv[i][j]);
         }
     }
     std::cout << std::endl;

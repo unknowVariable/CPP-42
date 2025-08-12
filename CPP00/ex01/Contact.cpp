@@ -1,10 +1,6 @@
 #include "Contact.hpp"
 
-/*
-@brief Contact class implementation
-This class represents a contact with various attributes such as first name, last name, nickname, phone number, and darkest secret.
-It provides methods to set and get these attributes, as well as to display the contact information. 
-*/
+
 void Contact::setFirstName(const std::string &name) {
     firstName = name;
 }
