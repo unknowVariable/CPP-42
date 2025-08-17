@@ -1,0 +1,3 @@
+Hello world
+My dog is happy
+The dog is barking

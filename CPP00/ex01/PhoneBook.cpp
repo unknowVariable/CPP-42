@@ -3,6 +3,20 @@
 #include <iostream>
 #include <iomanip>
 
+int ft_atoi(const std::string &str)
+{
+    int result = 0;
+
+    for (size_t i = 0; i < str.size(); ++i)
+    {
+        if (str[i] < '0' || str[i] > '9')
+            return 0;
+        result = result * 10 + (str[i] - '0');
+    }
+    return result;
+}
+
+
 PhoneBook::PhoneBook()
 {
     index = 0;
@@ -91,20 +105,11 @@ void PhoneBook::searchContacts() const
                   << formatField(contacts[i].getFirstName()) << "|"
                   << formatField(contacts[i].getLastName()) << "|"
                   << formatField(contacts[i].getNickname()) << std::endl;
-    }
-
-    for (int i = 0; i < contactCount; ++i)
-    {
-        std::cout << std::setw(10) << i + 1 << "|"
-                  << formatField(contacts[i].getFirstName()) << "|"
-                  << formatField(contacts[i].getLastName()) << "|"
-                  << formatField(contacts[i].getNickname()) << std::endl;
-    }
-    
+    } 
     std::cout << "Enter the index of the contact to view details: ";
     std::string input;
     std::getline(std::cin, input);
-    int index = std::atoi(input.c_str());
+    int index = ft_atoi(input);
 
     if (index < 1 || index > contactCount)
     {

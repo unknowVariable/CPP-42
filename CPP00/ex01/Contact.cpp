@@ -2,23 +2,23 @@
 
 
 void Contact::setFirstName(const std::string &name) {
-    firstName = name;
+    this->firstName = name;
 }
 
 void Contact::setLastName(const std::string &name) {
-    lastName = name;
+    this->lastName = name;
 }
 
 void Contact::setNickname(const std::string &name) {
-    nickname = name;
+    this->nickname = name;
 }
 
 void Contact::setPhoneNumber(const std::string &number) {
-    phoneNumber = number;
+    this->phoneNumber = number;
 }
 
 void Contact::setDarkestSecret(const std::string &secret) {
-    darkestSecret = secret;
+    this->darkestSecret = secret;
 }
 
 

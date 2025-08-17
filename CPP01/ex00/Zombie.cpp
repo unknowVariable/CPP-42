@@ -2,15 +2,15 @@
 
 Zombie::Zombie(std::string newName)
 {
-    name = newName;
+    _name = newName;
 }
 
 Zombie::~Zombie()
 {
-    std::cout << name << " a été détruit" << std::endl;
+    std::cout << _name << " a été détruit" << std::endl;
 }
 
 void Zombie::announce()
 {
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
